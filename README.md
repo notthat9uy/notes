@@ -33,4 +33,6 @@ qemu-system-arm \
   -m 1024 \
   -M virt \
   -monitor telnet:127.0.0.1:9000,server,nowait \
-  -drive format=raw,file=armdisk.img,if=virtio
+  -drive format=raw,file=armdisk.img,if=virtio \
+  -net nic,model=virtio \
+  -net user,id=mynet0,hostfwd=tcp::5555-:22
