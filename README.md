@@ -1,5 +1,9 @@
 Ubuntu Xenial
 
+Need at least Ubuntu 16.10, Tested with 17.04
+
+sudo apt-get install gcc-arm-linux-gnueabihf gcc-arm-linux-gnueabi libc6-dev-armhf-cross qemu-user-static qemu-system qemu-system-arm qemu linaro-image-tools
+
 wget http://ports.ubuntu.com/ubuntu-ports/dists/xenial/main/installer-armhf/current/images/generic-lpae/netboot/initrd.gz
 
 wget http://ports.ubuntu.com/ubuntu-ports/dists/xenial/main/installer-armhf/current/images/generic-lpae/netboot/vmlinuz
