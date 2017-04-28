@@ -155,8 +155,10 @@ In the pfSense menu, enter 2) for "Set Interface(s) IP Addresses"
 
 In this menu, you set up each adapter to your desired network topology
 
-Ex.  WAN to DHCP
-     LAN to static IP
-     OPT1 to static IP
-     OPT2 to staic IP
-
+Example:
+```
+WAN  to DHCP
+LAN  to static IP
+OPT1 to static IP
+OPT2 to static IP
+```
