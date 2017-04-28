@@ -17,8 +17,8 @@ sudo update-rc.d -f ssh defaults
 Move old keys into another directory
 ```
 cd /etc/ssh/
-mkdir old_keys
-mv ssh_host_* old_keys
+sudo mkdir old_keys
+sudo mv ssh_host_* old_keys
 ```
 Create new keys
 ```
