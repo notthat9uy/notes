@@ -1,0 +1,11 @@
+# https://hargitai.co.nz/xcode-cant-update-install-from-mac-appstore-is-stuck-on-waiting/
+
+
+```The connection to ACDAccountStore was invalidated```
+Close the AppStore.app
+In a terminal: killall appstoreagent
+Open  ~/Library/Caches/
+Delete the com.apple.appstore folder
+Open /private/var/folders
+Search all of the subfolders and delete all instances of com.apple.appstore
+Restart your Mac
