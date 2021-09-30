@@ -14,12 +14,16 @@
     /var/log/messages
     /var/log/commands.log
  
-    # Modify rtib users zshrc and add the following to precmd (added after last fi)
+    # Modify users bashrc
+    vim ~/.bashrc
+    export PROMPT_COMMAND='RETRN_VAL=$?;logger -p local6.debug "$(whoami) [$$]: $(history 1 | sed "s/^[ ]*[0-9]\+[ ]*//" ) [$RETRN_VAL]"'
+
+    # Modify users zshrc and add the following to precmd (added after last fi)
     vim ~/.zshrc
     eval 'RETRN_VAL=$?;logger -p local6.debug "$(whoami) [$$]: $(history | tail -n1 | sed "s/^[ ]*[0-9]\+[ ]*//" ) [$RETRN_VAL]"'
  
 
-    # Add the following to the bottom of the ~/.zshrc file
+    # Add the following to the bottom of the ~/.zshrc file or ~/.bash_aliases
     # Execute "script" command just once
     smart_script(){
         # if there's no SCRIPT_LOG_FILE exported yet
@@ -76,8 +80,13 @@
         cp $SCRIPT_LOG_FILE $rawfile
         printf 'Saved logs:\n    '$txtfile'\n    '$rawfile'\n'
     }
+    
+    # Add to ~/.zshrc or ~/.bashrc
     smart_script
  
 
     # Append this to the end of .zshrc
     PROMPT='%{$fg[yellow]%}[%D{%f/%m/%y} %D{%L:%M:%S}] '$PROMPT
+    
+    # Add to ~/.bashrc
+    export PROMPT_COMMAND="echo -n \[\$(date +%H:%M:%S)\]\ "
